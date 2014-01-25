@@ -1,0 +1,4 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(.*)$ %{DOCUMENT_ROOT}/mycdn/index.php?q=$1 [QSA,L]
+</IfModule>

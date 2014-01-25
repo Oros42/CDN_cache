@@ -1,0 +1,11 @@
+<ruleset name="googleapis.com via Personal host or CoralCDN (custom)">
+  <target host="*" />
+  <!-- For libs path see https://developers.google.com/speed/libraries/devguide -->
+  <!-- CDN_cache project : https://github.com/Oros42/CDN_cache -->
+
+  <!-- /!\ Don't forget to change MY_HOSTNAME by your hostname -->
+
+  <rule from="^https?://ajax\.googleapis\.com/ajax/libs/(.*).js" to="https://MY_HOSTNAME/mycdn/ajax/$1.js"/>
+  <rule from="^https?://apis\.google\.com/js/(.*).js" to="https://MY_HOSTNAME/mycdn/apis/$1.js"/> 
+  <rule from="^http://themes\.googleusercontent\.com/(.*)" to="https://MY_HOSTNAME/mycdn/themes/$1"/>
+</ruleset>
