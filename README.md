@@ -13,6 +13,9 @@ On your server :
 4- put index.php and .htaccess in /mycdn/  
 5- check that mod_rewrite is enabled  
   
-6- go on http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js
+6- go on http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js  
   If it work, you will be redirect to your server.
-s
+
+If you have any bug, pease report it.
+
+Next step, include cache for google fonts.
