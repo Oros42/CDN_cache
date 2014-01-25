@@ -18,5 +18,3 @@ On your server :
   If it works, you will be redirected to your server.
 
 If you have any bug, please report it.
-
-Next step, include cache for google fonts.

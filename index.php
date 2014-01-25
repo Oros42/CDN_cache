@@ -1,8 +1,7 @@
 <?php
 if(!empty($_GET['q'])){
 	$folder='./files/';
-	$q=$_GET['q'];
-
+	$q=substr($_SERVER["QUERY_STRING"], 14); // to keep parameters like "/fonts/family=Open+Sans:400italic,700italic,400,700"
 	define('PHPPREFIX','<?php /* ');
 	define('PHPSUFFIX',' */ ?>');
 	define('DATASTORE','data.php');
@@ -31,10 +30,14 @@ if(!empty($_GET['q'])){
 					$q=substr($q,7);
 					$url='https://themes.googleusercontent.com/'.$q;
 					break;
+				case 'fonts':
+					$q=substr($q,6);
+					$url='https://fonts.googleapis.com/css?'.$q;
+					break;
 				default:
-					exit();
+					exit('404');
 			}
-			$data[$q]=$folder.str_replace('/','__',$q).'.txt';
+			$data[$q]=$folder.str_replace(array('/', "'", '"', '?', ',', ':', '+', '='),'__',$q).'.txt';
 			$file=file_get_contents($url);
 			if(!file_exists($folder)){
 				mkdir($folder);

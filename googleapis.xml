@@ -7,5 +7,6 @@
 
   <rule from="^https?://ajax\.googleapis\.com/ajax/libs/(.*).js" to="https://MY_HOSTNAME/mycdn/ajax/$1.js"/>
   <rule from="^https?://apis\.google\.com/js/(.*).js" to="https://MY_HOSTNAME/mycdn/apis/$1.js"/> 
-  <rule from="^http://themes\.googleusercontent\.com/(.*)" to="https://MY_HOSTNAME/mycdn/themes/$1"/>
+  <rule from="^https?://themes\.googleusercontent\.com/(.*)" to="https://MY_HOSTNAME/mycdn/themes/$1"/>
+  <rule from="^https?://fonts\.googleapis\.com/css?(.*)" to="https://MY_HOSTNAME/mycdn/fonts/$1"/>
 </ruleset>
