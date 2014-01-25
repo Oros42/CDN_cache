@@ -6,7 +6,7 @@ CDN_cache
   
 On your computeur :  
 1- setup https-everywhere : https://www.eff.org/https-everywhere  
-2- move googleapis.xml to /home/<login>/.mozilla/firefox/<profile>/HTTPSEverywhereUserRules/  
+2- move googleapis.xml to /home/LOGIN/.mozilla/firefox/YOUR_PROFILE/HTTPSEverywhereUserRules/  
   
 On your server :  
 3- make the folder /mycdn  
