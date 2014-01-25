@@ -16,5 +16,7 @@ On your server :
   
 7- go on http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js  
   If it works, you will be redirected to your server.
+  
+You can go on https://your_host/mycdn/list to see files in your cache.
 
 If you have any bug, please report it.
