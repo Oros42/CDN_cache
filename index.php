@@ -36,6 +36,9 @@ if(!empty($_GET['q'])){
 			}
 			$data[$q]=$folder.str_replace('/','__',$q).'.txt';
 			$file=file_get_contents($url);
+			if(!file_exists($folder)){
+				mkdir($folder);
+			}
 			file_put_contents($data[$q],$file);
 			file_put_contents(DATASTORE, PHPPREFIX.base64_encode(gzdeflate(serialize($data))).PHPSUFFIX);
 			echo $file;
