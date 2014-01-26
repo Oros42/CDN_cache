@@ -34,6 +34,9 @@ if(!empty($_GET['q'])){
 					$q=substr($q,6);
 					$url='https://fonts.googleapis.com/css?'.$q;
 					break;
+				case 'analytics':
+					exit();
+					break;
 				default:
 					exit('404');
 			}

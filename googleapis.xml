@@ -9,4 +9,7 @@
   <rule from="^https?://apis\.google\.com/js/(.*).js" to="https://MY_HOSTNAME/mycdn/apis/$1.js"/> 
   <rule from="^https?://themes\.googleusercontent\.com/(.*)" to="https://MY_HOSTNAME/mycdn/themes/$1"/>
   <rule from="^https?://fonts\.googleapis\.com/css?(.*)" to="https://MY_HOSTNAME/mycdn/fonts/$1"/>
+
+  <!-- kick google-analytics -->
+  <rule from="^https?://(www.|ssl.)?google-analytics\.com(.*)" to="https://MY_HOSTNAME/mycdn/analytics/"/>
 </ruleset>
