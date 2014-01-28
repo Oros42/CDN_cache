@@ -41,12 +41,12 @@ if(!empty($_GET['q'])){
 					exit('404');
 			}
 			$data[$q]=$folder.str_replace(array('/', "'", '"', '?', ',', ':', '+', '='),'__',$q).'.txt';
+			file_put_contents(DATASTORE, PHPPREFIX.base64_encode(gzdeflate(serialize($data))).PHPSUFFIX);
 			$file=file_get_contents($url);
 			if(!file_exists($folder)){
 				mkdir($folder);
 			}
 			file_put_contents($data[$q],$file);
-			file_put_contents(DATASTORE, PHPPREFIX.base64_encode(gzdeflate(serialize($data))).PHPSUFFIX);
 			echo $file;
 		}
 	}
