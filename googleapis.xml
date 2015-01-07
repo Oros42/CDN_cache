@@ -1,15 +1,19 @@
 <ruleset name="googleapis.com via Personal host or CoralCDN (custom)">
-  <target host="*" />
+  <target host="ajax.googleapis.com" />
   <!-- For libs path see https://developers.google.com/speed/libraries/devguide -->
   <!-- CDN_cache project : https://github.com/Oros42/CDN_cache -->
 
   <!-- /!\ Don't forget to change MY_HOSTNAME by your hostname -->
 
   <rule from="^https?://ajax\.googleapis\.com/ajax/libs/(.*).js" to="https://MY_HOSTNAME/mycdn/ajax/$1.js"/>
-  <rule from="^https?://apis\.google\.com/js/(.*).js" to="https://MY_HOSTNAME/mycdn/apis/$1.js"/> 
+  <target host="apis.google.com" />
+  <rule from="^https?://apis\.google\.com/js/(.*).js" to="https://MY_HOSTNAME/mycdn/apis/$1.js"/>
+  <target host="themes.googleusercontent.com" />
   <rule from="^https?://themes\.googleusercontent\.com/(.*)" to="https://MY_HOSTNAME/mycdn/themes/$1"/>
+  <target host="fonts.googleapis.com" />
   <rule from="^https?://fonts\.googleapis\.com/css?(.*)" to="https://MY_HOSTNAME/mycdn/fonts/$1"/>
 
   <!-- kick google-analytics -->
+  <target host="*.google-analytics.com" />
   <rule from="^https?://(www.|ssl.)?google-analytics\.com(.*)" to="https://MY_HOSTNAME/mycdn/analytics/"/>
 </ruleset>
