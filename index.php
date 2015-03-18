@@ -1,5 +1,6 @@
 <?php
 if(!empty($_GET['q'])){
+	header('Access-Control-Allow-Origin: *');
 	$folder='./files/';
 	$q=substr($_SERVER["QUERY_STRING"], 14); // to keep parameters like "/fonts/family=Open+Sans:400italic,700italic,400,700"
 	define('PHPPREFIX','<?php /* ');
@@ -19,10 +20,12 @@ if(!empty($_GET['q'])){
 			$f=explode('/',$q);
 			switch($f[0]){
 				case 'ajax':
+					header('Content-type: text/javascript');
 					$q=substr($q,5);
 					$url='https://ajax.googleapis.com/ajax/libs/'.$q;
 					break;
 				case 'apis':
+					header('Content-type: text/javascript');
 					$q=substr($q,5);
 					$url='https://apis.google.com/js/'.$q;
 					break;
@@ -31,8 +34,14 @@ if(!empty($_GET['q'])){
 					$url='https://themes.googleusercontent.com/'.$q;
 					break;
 				case 'fonts':
+					header('Content-Type: text/css');
 					$q=substr($q,6);
 					$url='https://fonts.googleapis.com/css?'.$q;
+					break;
+				case 'gstatic-fonts':
+					header('Content-Type: font/ttf');
+                                        $q=substr($q,14);
+					$url='https://fonts.gstatic.com/'.$q;
 					break;
 				case 'analytics':
 					exit();

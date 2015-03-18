@@ -12,7 +12,8 @@
   <rule from="^https?://themes\.googleusercontent\.com/(.*)" to="https://MY_HOSTNAME/mycdn/themes/$1"/>
   <target host="fonts.googleapis.com" />
   <rule from="^https?://fonts\.googleapis\.com/css?(.*)" to="https://MY_HOSTNAME/mycdn/fonts/$1"/>
-
+  <target host="fonts.gstatic.com" />
+  <rule from="^https?://fonts\.gstatic\.com/(.*)" to="https://MY_HOSTNAME/mycdn/gstatic-fonts/$1"/>
   <!-- kick google-analytics -->
   <target host="*.google-analytics.com" />
   <rule from="^https?://(www.|ssl.)?google-analytics\.com(.*)" to="https://MY_HOSTNAME/mycdn/analytics/"/>
